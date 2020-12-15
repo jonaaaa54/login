@@ -1,0 +1,76 @@
+<app-nav-landing> </app-nav-landing>
+
+<div class="login-page">
+    <div class="box">
+        <div class="left">
+            <h3>Crear Cuenta</h3>
+            <button type="button" class="register-btn">Registrarse</button>
+        </div>
+        <div class="right">
+            <h3>Unete</h3>
+            <button type="button" class="login-btn">entrar</button>
+        </div>
+        <div class="form">
+            <!-- Login form Start -->
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                <div class="login-form">
+                    <h3>Iniciar Sesión</h3>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email*" class="form-control" formControlName="email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Contraseña*" class="form-control" formControlName="password">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                          <input type="checkbox"> Recordarme
+                        </label>
+                    </div>
+                    <button type="submit" class="submit-btn">Entrar</button>
+                    <a routerLink="forget" class=" lost-pass-btn">recupera tu contraseña</a>
+                </div>
+            </form>
+            <!-- Login form End -->
+
+            <!-- Register form Start -->
+
+            <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+                <div class="register-form form-hidden">
+                    <h3>Register</h3>
+                    <div class="form-group">
+                        <input type="text" placeholder="Primer nombre*" class="form-control" formControlName="nombre">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" placeholder="Apellido*" class="form-control" formControlName="apellido">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email*" class="form-control" formControlName="email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Clave*" class="form-control" formControlName="password">
+                    </div>
+
+                    <button type="submit" class="submit-btn">registrate</button>
+                </div>
+            </form>
+            <!-- Register form End -->
+
+            <!-- Lost Password form Start -->
+            <div class="lost-password-form form-hidden " id="forget">
+                <h3>Olvidaste tu contraseña</h3>
+                <h5>Verifica tu email para recuperar tu contraseña</h5>
+
+                <div class="form-group ">
+                    <input type="text" placeholder="Email* " class="form-control ">
+                </div>
+
+
+                <button type="button " class="submit-btn ">Recuperar contraseña</button>
+                <p><a routerLink="login-form" class="login-btn ">entrar</a> | <a routerLink="register-form" class="register-btn ">registrarse</a></p>
+            </div>
+            <!-- Lost Password form End -->
+
+        </div>
+    </div>
+</div>
